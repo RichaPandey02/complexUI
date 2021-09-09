@@ -1,20 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms';
 
-import * as $ from 'jquery'
 
 
 @Component({
   selector: 'app-costofcare',
   templateUrl: './costofcare.component.html',
-  styleUrls: ['./costofcare.component.css']
+  styleUrls: ['./costofcare.component.scss']
 })
 export class CostofcareComponent implements OnInit {
-  age
+  Fullname=new FormControl('',[Validators.required]);
+  contactForm:FormGroup
+  constructor(private fb: FormBuilder) {
+    this.contactForm=this.fb.group(
+      {
+    Fullname:this.Fullname,
+
+      }
+    )
+
+  }
+
+ ngOnInit(): void {
+ }
+  age:number
   isShow=true
-  OnInput(value) {
+  onInput(value) {
     this.age = value;
     console.log(this.age)
-    if(this.age>=75 || this.age<=20)
+    if(this.age>=75 || this.age<=29)
     {
       this.isShow=false
     }
@@ -23,10 +37,5 @@ export class CostofcareComponent implements OnInit {
 
     }
    }
-  constructor() {
 
-   }
-
-  ngOnInit(): void {
-  }
 }

@@ -2,133 +2,112 @@
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet"
 />
+<body class="container__body">
+  <div class="container__text">
+    <div>
+      <p class="container__para">In what state do you want to retire?</p>
 
-<body class="container__body" >
+      <select name="cars" id="cars" class="container__options">
+        <option value="volvo">Alaska</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
+    <div class="conatiner__verticalline"></div>
+    <div>
+      <p class="container__para1">How old are you?</p>
+      <form name="myForm" [formGroup]="contactForm">
+        <input
+          type="text"
+          class="form-control"
+          #myInput
+          (keyup)="onInput(myInput.value)"
+          placeholder="Enter age"
+          class="container__para2"
+          [formControl]="Fullname" name="Fullname"
+        />
+        <div class="container__invalid">
+          <span [hidden]="Fullname.valid || Fullname.untouched">
+            <span [hidden]="!Fullname.hasError('required')" class="container__required">This field is required</span>
+
+          </span>
+        </div>
 
 
-    <div class="container__text">
-      <div>
-  <p class="container__para">In what state do you want to retire?</p>
 
 
 
-<select name="cars" id="cars" class="container__options">
-  <option value="volvo">Alaska</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-</div>
 
-<div class = "conatiner__verticalline"></div>
-<div>
-<p class="container__para1">How old are you?</p>
-<form name="myForm" >
-  <input type="number" class="form-control"  #myInput  (keyup)="OnInput(myInput.value)"  placeholder="Enter age">
-
-  <p class="container__age">The age must be 30 to 74</p>
-
-</form>
-</div>
-</div>
-<br><br>
-
+        <p class="container__age">The age must be 30 to 74</p>
+      </form>
+    </div>
+  </div>
+  <br /><br />
   <div class="flex-container">
+    <div *ngIf="isShow">
+      <div class="container__box">
+        <div class="conatiner__child">
+          <h3 class="conatiner__heading">
+            What Kind of care are you looking for?
+          </h3>
 
-<div *ngIf="isShow">
-
-
-  <div class="container__box">
-
-    <div class="conatiner__child">
-      <h3 class="conatiner__heading">
-        What Kind of care are you looking for?
-      </h3>
-      <!-- <p class="conatiner__heading1">What's the differnece?</p> -->
-      <div class="container__gridcard">
-      <div class="container__card1">
-
-        <input id=un type=checkbox> <label for=un></label>
-        <i class="material-icons brand-icon" for="health" >home</i>
-        <h3 class="container__headinghome">Skilled Nursing</h3>
+          <div class="container__gridcard">
+            <div class="container__card1">
+              <input id="un" type="checkbox" /> <label for="un"></label>
+              <i class="material-icons brand-icon" for="health">home</i>
+              <h3 class="container__headinghome">Skilled Nursing</h3>
+            </div>
+            <div class="container__card2">
+              <input id="un" type="checkbox" /> <label for="un"></label>
+              <i class="material-icons brand-icon" for="groups">groups</i>
+              <h3 class="container__headinghome">Assisted living</h3>
+            </div>
+            <div class="container__card3">
+              <input id="un" type="checkbox" /> <label for="un"></label>
+              <i class="material-icons brand-icon" for="home">home</i>
+              <h3 class="container__headinghome">Skilled nursing</h3>
+            </div>
+          </div>
+          <h2 class="conatiner__mainheading">Pennsylvania state averages</h2>
+          <p class="conatiner__mainheading">
+            (Amount of care is prefiled with Pennsylvania state averagers. Edit
+            fieldsto customize amount of care needed
+          </p>
+        </div>
       </div>
-      <div class="container__card2">
-
-        <input id=un type=checkbox> <label for=un></label>
-          <i class="material-icons brand-icon" for="groups">groups</i>
-          <h3 class="container__headinghome">Assisted living</h3>
-      </div>
-      <div class="container__card3">
-
-
-          <input id=un type=checkbox> <label for=un></label>
-          <i class="material-icons brand-icon" for="home">home</i>
-          <h3 class="container__headinghome">Skilled nursing</h3>
-
-      </div>
-  </div>
-  <h2 class="conatiner__mainheading">Pennsylvania state averages</h2>
-  <p class="conatiner__mainheading">(Amount of care is prefiled with Pennsylvania state averagers. Edit fieldsto customize amount of care needed</p>
     </div>
-
-
-
-  </div>
-
-</div>
-
-
-
-
-<div *ngIf="!isShow">
-
-  <div class="container__box" disabled="disabled">
-
-    <div class="conatiner__child">
-      <h3 class="conatiner__heading">
-        What Kind of care are you looking for?
-      </h3>
-      <!-- <p class="conatiner__heading1">What's the differnece?</p> -->
-      <div class="container__gridcard">
-      <div class="container__card1">
-
-        <input id=un type=checkbox> <label for=un></label>
-        <i class="material-icons brand-icon" for="health" >home</i>
-        <h3 class="container__headinghome">Skilled Nursing</h3>
+    <div *ngIf="!isShow">
+      <div class="container__box" disabled="disabled">
+        <div class="conatiner__childdisable">
+          <h3 class="conatiner__heading">
+            What Kind of care are you looking for?
+          </h3>
+          <!-- <p class="conatiner__heading1">What's the differnece?</p> -->
+          <div class="container__gridcard">
+            <div class="container__card1">
+              <input id="un" type="checkbox" /> <label for="un"></label>
+              <i class="material-icons brand-icon" id="brand-icon-disable" for="health">home</i>
+              <h3 class="container__headinghome">Skilled Nursing</h3>
+            </div>
+            <div class="container__card2">
+              <input id="un" type="checkbox" /> <label for="un"></label>
+              <i class="material-icons brand-icon" id="brand-icon-disable" for="groups">groups</i>
+              <h3 class="container__headinghome">Assisted living</h3>
+            </div>
+            <div class="container__card3">
+              <input id="un" type="checkbox" /> <label for="un"></label>
+              <i class="material-icons brand-icon" id="brand-icon-disable" for="home">home</i>
+              <h3 class="container__headinghome">Skilled nursing</h3>
+            </div>
+          </div>
+          <h2 class="conatiner__mainheading">Pennsylvania state averages</h2>
+          <p class="conatiner__mainheading">
+            (Amount of care is prefiled with Pennsylvania state averagers. Edit
+            fieldsto customize amount of care needed
+          </p>
+        </div>
       </div>
-      <div class="container__card2">
-
-        <input id=un type=checkbox> <label for=un></label>
-          <i class="material-icons brand-icon" for="groups">groups</i>
-          <h3 class="container__headinghome">Assisted living</h3>
-      </div>
-      <div class="container__card3">
-
-
-          <input id=un type=checkbox> <label for=un></label>
-          <i class="material-icons brand-icon" for="home">home</i>
-          <h3 class="container__headinghome">Skilled nursing</h3>
-
-      </div>
-  </div>
-  <h2 class="conatiner__mainheading">Pennsylvania state averages</h2>
-  <p class="conatiner__mainheading">(Amount of care is prefiled with Pennsylvania state averagers. Edit fieldsto customize amount of care needed</p>
     </div>
-
-
-
   </div>
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
 </body>
-

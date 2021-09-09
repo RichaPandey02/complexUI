@@ -14,7 +14,7 @@ describe('CostofcareComponent', () => {
   });
   it("to test the showMandi function",()=>{
     let mandi1=new CostofcareComponent();
-    let fun1=mandi1.isShow;
+    let fun1=mandi1.onInput('');
     expect(fun1).toBeTruthy()
   })
 
