@@ -1,16 +1,20 @@
 * {
   box-sizing: border-box;
-
 }
+$bg-color:#bbb;
+$bg-shadowColor:#fff;
+$bg-squareColor:#353b48;
+ $border-color:#000000;
+ $bg-iconColor:#c0392b;
 .wrapper {
-  border: 1px solid #bbb;
+  border: 1px solid $bg-color;
   margin-left: 20px;
   margin-right: 20px;
 
   height: 1500px;
   margin-top: -2px;
-  -webkit-box-shadow: 0 0 10px #fff;
-  box-shadow: 0 0 10px #bbb;
+  -webkit-box-shadow: 0 0 10px $bg-shadowColor;
+  box-shadow: 0 0 10px $bg-color;
 }
 .wrapper__divider {
   display: flex;
@@ -24,10 +28,10 @@
   margin-top: 50px;
 }
 .wrapper__verticalline {
-  border-left: 1px dashed #000000;
+  border-left: 1px dashed  $border-color;
   height: 150px;
   position: absolute;
-  border-bottom: 3px dotted #bbb;
+  border-bottom: 3px dotted $bg-color;
   left: 49.9%;
 }
 .wrapper__divider__right {
@@ -38,13 +42,13 @@
 }
 .wrapper__state {
   font-size: 15px;
-  color: #353b48;
+  color: $bg-squareColor;
 }
-.stateheading{
-  color: #353b48;
+.stateheading {
+  color: $bg-squareColor;
 }
 .wrapper__invalid {
-  color: #e84118;
+  color:  $bg-iconColor;
   margin-left: 20px;
 }
 div[disabled="disabled"] {
@@ -65,30 +69,30 @@ div[disabled="disabled"] {
   position: absolute;
   width: 50px;
   height: 50px;
-  border-top: 0px solid #fff;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  border-left: 0px solid #ffff;
+  border-top: 0px solid $bg-shadowColor;
+  border-right: 2px solid$bg-shadowColor;
+  border-bottom: 2px solid $bg-shadowColor;
+  border-left: 0px solid $bg-shadowColor;
   left: 50%;
   margin-left: -25px;
   content: "";
   transform: rotate(45deg);
   margin-top: -25px;
-  background: #fff;
-  background: linear-gradient(to top, 25%white, #bbb);
+  background: $bg-shadowColor;
+  background: linear-gradient(to top, 25% $bg-shadowColor, $bg-color);
 }
 .heading {
   padding: 35px;
   font-size: 20px;
   text-align: center;
-  color: white;
+  color: $bg-shadowColor;
 }
 .wrapper__boxces {
   margin-left: 23%;
 }
 .card:hover {
-  -webkit-box-shadow: 0 0 10px #fff;
-  box-shadow: 0 0 10px #fff;
+  -webkit-box-shadow: 0 0 10px  $bg-iconColor;
+  box-shadow: 0 0 10px  $bg-iconColor;
 }
 #un {
   width: 40px;
@@ -103,11 +107,11 @@ div[disabled="disabled"] {
 }
 
 #un:checked {
-  box-shadow: inset 0 0 0 20px #e74c3c;
+  box-shadow: inset 0 0 0 20px  $bg-iconColor;
 }
 
-.card-image{
-  color: #bc3330
+.card-image {
+  color:  $bg-iconColor;
 }
 @media screen and (max-width: 376px) {
   .wrapper__para2 {
@@ -127,7 +131,7 @@ div[disabled="disabled"] {
 }
 
 input.ng-invalid.ng-touched {
-  border: 1px solid #e84118;
+  border: 1px solid  $bg-iconColor;
 }
 
 @media screen and (max-width: 1194px) {
@@ -195,7 +199,7 @@ input.ng-invalid.ng-touched {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0  $border-color(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;
@@ -206,7 +210,7 @@ input.ng-invalid.ng-touched {
   text-align: center;
   font-size: 20px;
   font-style: italic;
-  color: black;
+  color:  $border-color;
   margin-top: 140px;
 }
 
@@ -229,12 +233,10 @@ input.ng-invalid.ng-touched {
   justify-content: center;
 }
 
-
 .wrapper__state {
   font-size: 15px;
-  color: #bbb;
+  color: $bg-color;
 }
-
 
 @media screen and (min-width: 375px) and(max-width:812px) {
   .wrapper__para2 {
@@ -266,7 +268,7 @@ input.ng-invalid.ng-touched {
 }
 
 i:hover {
-  color: black;
+  color:  $border-color;
 }
 
 @media screen and (min-width: 320px) and(max-width:568px) {
