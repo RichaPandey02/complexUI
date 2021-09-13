@@ -1,86 +1,73 @@
-// $icon-color: #ff0000;
-// $bg-color: #fff;
-// $bgnav-color: rgba(255, 255, 255, 0.76);
-// $bgnavLink-color: #000000;
 @import '../navvariables';
 body {
   margin: 0;
   font-family: Roboto, Arial, helvetica, sans-serif;
 }
-.navbar-container {
+.nav-container {
   text-align: center;
   background-color: $bg-color;
-
   padding: 0px;
   font-size: 0;
   margin: 0px;
   display: flex;
-
   justify-content: center;
   flex-direction: row;
+li:hover{
+  color:$icon-color ;
 }
-
+}
 a {
   outline: none;
 }
 .active {
   color: $icon-color;
 }
-
-.navbar-container ul {
+.nav-container ul {
   margin: 0;
   padding: 0;
   text-align: right;
   display: inline-block;
   vertical-align: middle;
 }
-
-.navbar-container ul li {
+.nav-container ul li {
   display: inline-block;
   font-size: 16px;
 }
-
-.navbar-container ul li a {
+.nav-container ul li a {
   color: $bgnavLink-color;
   text-decoration: none;
   display: inline-block;
   padding: 2px;
   transition: color 0.5s;
 }
-
-.navbar-container ul li .underline {
+.nav-container ul li .underline {
   height: 3px;
   background-color: transparent;
   width: 0%;
   transition: width 0.2s, background-color 0.5s;
   margin: 0 auto;
 }
-
-.navbar-container ul li.active-link .underline {
+.nav-container ul li.active-link .underline {
   width: 100%;
   background-color: $icon-color;
 }
-
-.navbar-container ul li:hover .underline {
+.nav-container ul li:hover .underline {
   background-color: $icon-color;
   width: 100%;
 }
-
-.navbar-container ul li:hover a {
+.nav-container ul li:hover a {
   color: $icon-color;
 }
-
-.navbar-container ul li:active a {
+.nav-container ul li:active a {
   transition: none;
   color: $bgnav-color;
 }
-
-.navbar-container ul li:active .underline {
+.nav-container ul li:active .underline {
   transition: none;
   background-color: $bgnav-color;
 }
 @media screen and (min-width: 320px) and(max-width:568px) {
-  .navbar-container ul li a {
+  .nav-container ul li a {
     justify-content: left;
   }
 }

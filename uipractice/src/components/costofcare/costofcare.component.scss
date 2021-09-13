@@ -84,7 +84,7 @@ div[disabled="disabled"] {
   color: $bg-shadowColor;
 }
 .wrapper__boxces {
-  margin-left: 23%;
+   margin-left: 19%;
 }
 .card:hover {
   -webkit-box-shadow: 0 0 10px $bg-iconColor;
@@ -125,6 +125,7 @@ div[disabled="disabled"] {
   }
 
   .wrapper__square {
+
     height: 500px;
 
   }
@@ -165,7 +166,8 @@ input.ng-invalid.ng-touched {
 }
 
 .wrapper__row {
-  margin: 0 -5px;
+   margin: 0 -5px;
+
 }
 
 .wrapper__row:after {
