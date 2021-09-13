@@ -1,16 +1,21 @@
+// $icon-color: #ff0000;
+// $bg-color: #fff;
+// $bgnav-color: rgba(255, 255, 255, 0.76);
+// $bgnavLink-color: #000000;
+@import '../navvariables';
 body {
   margin: 0;
   font-family: Roboto, Arial, helvetica, sans-serif;
 }
 .navbar-container {
   text-align: center;
-  background-color: #fff;
-  /* box-shadow: 0px -20px 5px 20px #fff; */
+  background-color: $bg-color;
+
   padding: 0px;
   font-size: 0;
   margin: 0px;
   display: flex;
-  /* flex-wrap: wrap; */
+
   justify-content: center;
   flex-direction: row;
 }
@@ -19,7 +24,7 @@ a {
   outline: none;
 }
 .active {
-  color: red;
+  color: $icon-color;
 }
 
 .navbar-container ul {
@@ -36,7 +41,7 @@ a {
 }
 
 .navbar-container ul li a {
-  color: black;
+  color: $bgnavLink-color;
   text-decoration: none;
   display: inline-block;
   padding: 2px;
@@ -53,26 +58,26 @@ a {
 
 .navbar-container ul li.active-link .underline {
   width: 100%;
-  background-color: red;
+  background-color: $icon-color;
 }
 
 .navbar-container ul li:hover .underline {
-  background-color: red;
+  background-color: $icon-color;
   width: 100%;
 }
 
 .navbar-container ul li:hover a {
-  color: red;
+  color: $icon-color;
 }
 
 .navbar-container ul li:active a {
   transition: none;
-  color: rgba(255, 255, 255, 0.76);
+  color: $bgnav-color;
 }
 
 .navbar-container ul li:active .underline {
   transition: none;
-  background-color: rgba(255, 255, 255, 0.76);
+  background-color: $bgnav-color;
 }
 @media screen and (min-width: 320px) and(max-width:568px) {
   .navbar-container ul li a {
@@ -80,5 +85,5 @@ a {
   }
 }
 a:hover {
-  color: red;
+  color: $icon-color;
 }

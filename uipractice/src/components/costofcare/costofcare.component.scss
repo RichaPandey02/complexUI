@@ -1,54 +1,50 @@
+@import '../costofcarevariables';
 * {
   box-sizing: border-box;
 }
-$bg-color:#bbb;
-$bg-shadowColor:#fff;
-$bg-squareColor:#353b48;
- $border-color:#000000;
- $bg-iconColor:#c0392b;
 .wrapper {
   border: 1px solid $bg-color;
   margin-left: 20px;
   margin-right: 20px;
-
   height: 1500px;
   margin-top: -2px;
   -webkit-box-shadow: 0 0 10px $bg-shadowColor;
   box-shadow: 0 0 10px $bg-color;
-}
-.wrapper__divider {
-  display: flex;
 
-  justify-content: center;
+  .wrapper__divider {
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper__divider__left {
+    display: flex;
+    margin-right: 25%;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .wrapper__verticalline {
+    border-left: 1px dashed $border-color;
+    height: 150px;
+    position: absolute;
+    border-bottom: 3px dotted $bg-color;
+    left: 49.9%;
+  }
+  .wrapper__divider__right {
+    display: flex;
+    margin-left: 5%;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .wrapper__state {
+    font-size: 15px;
+    color: $bg-squareColor;
+  }
+  .stateheading {
+    color: $bg-squareColor;
+  }
 }
-.wrapper__divider__left {
-  display: flex;
-  margin-right: 25%;
-  flex-direction: column;
-  margin-top: 50px;
-}
-.wrapper__verticalline {
-  border-left: 1px dashed  $border-color;
-  height: 150px;
-  position: absolute;
-  border-bottom: 3px dotted $bg-color;
-  left: 49.9%;
-}
-.wrapper__divider__right {
-  display: flex;
-  margin-left: 5%;
-  flex-direction: column;
-  margin-top: 50px;
-}
-.wrapper__state {
-  font-size: 15px;
-  color: $bg-squareColor;
-}
-.stateheading {
-  color: $bg-squareColor;
-}
+
 .wrapper__invalid {
-  color:  $bg-iconColor;
+  color: $bg-iconColor;
   margin-left: 20px;
 }
 div[disabled="disabled"] {
@@ -91,15 +87,15 @@ div[disabled="disabled"] {
   margin-left: 23%;
 }
 .card:hover {
-  -webkit-box-shadow: 0 0 10px  $bg-iconColor;
-  box-shadow: 0 0 10px  $bg-iconColor;
+  -webkit-box-shadow: 0 0 10px $bg-iconColor;
+  box-shadow: 0 0 10px $bg-iconColor;
 }
 #un {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transition: box-shadow 0.3s;
-  background: lightgrey;
+  background: $bg-color;
   cursor: pointer;
   border: 0;
   appearance: none;
@@ -107,11 +103,15 @@ div[disabled="disabled"] {
 }
 
 #un:checked {
-  box-shadow: inset 0 0 0 20px  $bg-iconColor;
+  box-shadow: inset 0 0 0 20px $bg-iconColor;
 }
 
 .card-image {
-  color:  $bg-iconColor;
+  color: $bg-iconColor;
+}
+.main-para{
+  color:  1px bold $border-color;
+  font-size: 30px;
 }
 @media screen and (max-width: 376px) {
   .wrapper__para2 {
@@ -126,12 +126,12 @@ div[disabled="disabled"] {
 
   .wrapper__square {
     height: 500px;
-    background-color: cadetblue;
+
   }
 }
 
 input.ng-invalid.ng-touched {
-  border: 1px solid  $bg-iconColor;
+  border: 1px solid $bg-iconColor;
 }
 
 @media screen and (max-width: 1194px) {
@@ -199,7 +199,7 @@ input.ng-invalid.ng-touched {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0  $border-color(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 $border-color(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;
@@ -210,7 +210,7 @@ input.ng-invalid.ng-touched {
   text-align: center;
   font-size: 20px;
   font-style: italic;
-  color:  $border-color;
+  color: $border-color;
   margin-top: 140px;
 }
 
@@ -268,7 +268,7 @@ input.ng-invalid.ng-touched {
 }
 
 i:hover {
-  color:  $border-color;
+  color: $border-color;
 }
 
 @media screen and (min-width: 320px) and(max-width:568px) {
